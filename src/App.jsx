@@ -1,25 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Explore from './pages/Explore';
-import Pricing from './pages/Pricing';
-import Contact from './pages/Contact';
-import Privacy from './pages/Privacy';
-import Cookies from './pages/Cookies';
+import { AuthProvider } from './contexts/AuthContext.jsx';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
+import Explore from './pages/Explore.jsx';
+import Pricing from './pages/Pricing.jsx';
+import Contact from './pages/Contact.jsx';
+import Privacy from './pages/Privacy.jsx';
+import Cookies from './pages/Cookies.jsx';
 import './utils/colors.css';
 import './i18n';
-import TermsAndConditions from './pages/Terms';
-import EggDonors from './pages/Functionalities/EggDonors';
-import Surrogates from './pages/Functionalities/Surrogacy';
-import IntendedParents from './pages/Functionalities/Intended';
-import PricingBasic from './pages/PricingBasic'
-import PrcingEnterprice from './pages/PricingEnterprice';
-import PricingPro from './pages/PricingPro';
+import TermsAndConditions from './pages/Terms.jsx';
+import EggDonors from './pages/Functionalities/EggDonors.jsx';
+import Surrogates from './pages/Functionalities/Surrogacy.jsx';
+import IntendedParents from './pages/Functionalities/Intended.jsx';
+import PricingBasic from './pages/PricingBasic.jsx'
+import PrcingEnterprice from './pages/PricingEnterprice.jsx';
+import PricingPro from './pages/PricingPro.jsx';
 
 function App() {
   return (
