@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Lock, Eye, FileText } from 'lucide-react';
-import { WEBSITE } from '@/utils/websiteInfo';
+import { WEBSITE } from '../utils/websiteInfo';
 
-const Privacy: React.FC = () => {
+const Privacy = () => {
   const sections = [
     {
       title: 'Information We Collect',

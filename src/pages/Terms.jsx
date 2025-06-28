@@ -1,4 +1,4 @@
-import { WEBSITE } from '@/utils/websiteInfo';
+import { WEBSITE } from '../utils/websiteInfo';
 import { motion } from 'framer-motion';
 
 const staggerContainer = {

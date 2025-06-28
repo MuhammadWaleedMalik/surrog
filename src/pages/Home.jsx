@@ -1,4 +1,4 @@
-import { AlternateCards } from '@/components/AlternateCards';
+import { AlternateCards } from '../components/AlternateCards';
 import { motion } from 'framer-motion';
 
 // Animation variants for Framer Motion

@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, User, LogOut, Home, Info, DollarSign, Mail } from 'lucide-react';
-import { WEBSITE } from '@/utils/websiteInfo';
+import { WEBSITE } from '../utils/websiteInfo';
 import LanguageSwitcher from './LanguageSwitcher';
 import logo from '../assets/images/logo.png';
 
@@ -13,7 +13,7 @@ const Header = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-  const [user, setUser] = useState<{name: string, email: string} | null>(null);
+  const [user, setUser] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Check for token and user data on component mount

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { motion, MotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 // Animation variants for Framer Motion
 const fadeIn = {
@@ -26,24 +26,15 @@ const slideInRight = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
 };
 
-// Interface for Service data
-interface Service {
-  title: string;
-  description: string;
-  image: string;
-  path: string;
-}
+
 
 // Navbar Component
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-  interface NavItem {
-    name: string;
-    path: string;
-  }
+ 
 
-  const navItems: NavItem[] = [
+  const navItems= [
     { name: 'Home', path: '/' },
     { name: 'Intended Parents', path: '/intendedparents' },
     { name: 'Surrogates', path: '/surrogates' },
@@ -114,8 +105,8 @@ const Navbar: React.FC = () => {
 };
 
 // AlternateCards Component
-export const AlternateCards: React.FC = () => {
-  const services: Service[] = [
+export const AlternateCards = () => {
+  const services = [
     {
       title: 'Intended Parents',
       description:
@@ -165,7 +156,7 @@ export const AlternateCards: React.FC = () => {
                 src={service.image}
                 alt={service.title}
                 className="w-full h-64 object-cover object-center"
-                onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) =>
+                onError={(e) =>
                   (e.currentTarget.src = '/assets/fallback-image.jpg')
                 }
               />
@@ -191,7 +182,7 @@ export const AlternateCards: React.FC = () => {
 };
 
 // Service Page Components
-const IntendedParents: React.FC = () => (
+const IntendedParents = () => (
   <motion.div
     className="max-w-6xl mx-auto py-20 px-4 md:px-8"
     variants={fadeIn}
@@ -210,7 +201,7 @@ const IntendedParents: React.FC = () => (
   </motion.div>
 );
 
-const Surrogates: React.FC = () => (
+const Surrogates= () => (
   <motion.div
     className="max-w-6xl mx-auto py-20 px-4 md:px-8"
     variants={fadeIn}
@@ -229,7 +220,7 @@ const Surrogates: React.FC = () => (
   </motion.div>
 );
 
-const EggDonors: React.FC = () => (
+const EggDonors = () => (
   <motion.div
     className="max-w-6xl mx-auto py-20 px-4 md:px-8"
     variants={fadeIn}
@@ -249,7 +240,7 @@ const EggDonors: React.FC = () => (
 );
 
 // Home Component
-const Home: React.FC = () => {
+const Home= () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 font-sans">
       {/* Navbar */}
@@ -335,7 +326,7 @@ const Home: React.FC = () => {
               src="/assets/about-image.jpg"
               alt="About Network Surrogacy"
               className="w-full h-64 object-cover object-center"
-              onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) =>
+              onError={(e) =>
                 (e.currentTarget.src = '/assets/fallback-image.jpg')
               }
             />

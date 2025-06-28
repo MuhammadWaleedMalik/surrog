@@ -3,9 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
-import { WEBSITE } from '@/utils/websiteInfo';
+import { WEBSITE } from '../utils/websiteInfo';
 
-const Signup: React.FC = () => {
+const Signup = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -16,7 +16,7 @@ const Signup: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setIsLoading(true);
@@ -60,7 +60,7 @@ const Signup: React.FC = () => {
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };

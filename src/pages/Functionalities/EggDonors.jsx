@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle, Phone, Mail, ChevronDown, ChevronUp } from 'lucide-react';
 
-const Surrogates: React.FC = () => {
+const EggDonors = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -12,54 +12,54 @@ const Surrogates: React.FC = () => {
     message: ''
   });
 
-  const surrogateFaqs = [
+  const eggDonorFaqs = [
     {
       id: 1,
-      question: "What are the requirements to become a surrogate?",
-      answer: "Surrogates typically need to be 21-40 years old, have had at least one successful pregnancy, be in good health, and pass medical and psychological screenings. You must also have a stable living situation and reliable support system."
+      question: "What are the basic requirements to become an egg donor?",
+      answer: "Egg donors typically need to be between 21-32 years old, in good health, with regular menstrual cycles. You'll undergo medical and psychological screening."
     },
     {
       id: 2,
-      question: "How long does the surrogacy process take?",
-      answer: "The entire process usually takes 12-18 months from application to delivery. This includes matching with intended parents, medical screenings, legal contracts, embryo transfer, pregnancy, and delivery."
+      question: "How long does the egg donation process take?",
+      answer: "The entire process takes about 4-6 weeks from screening to egg retrieval. The actual medication cycle is approximately 10-14 days."
     },
     {
       id: 3,
-      question: "What is the compensation for surrogates?",
-      answer: "First-time surrogates typically earn $35,000-$50,000, with experienced surrogates earning more. Additional compensation is provided for milestones, multiples, and other circumstances. All medical and pregnancy-related expenses are covered separately."
+      question: "Is egg donation painful?",
+      answer: "Most donors report mild discomfort similar to menstrual cramps during stimulation. The retrieval is done under sedation so you won't feel pain during the procedure."
     },
     {
       id: 4,
-      question: "Will I have contact with the intended parents?",
-      answer: "This depends on your preferences and theirs. Some relationships are very close with regular contact, while others maintain more boundaries. We help match you based on these preferences."
+      question: "How many times can I donate eggs?",
+      answer: "The ASRM recommends no more than 6 donations in a lifetime to protect donor health and minimize potential risks."
     },
     {
       id: 5,
-      question: "What medical procedures are involved?",
-      answer: "The process includes fertility medications, monitoring appointments, embryo transfer procedure (similar to a pap smear), and standard prenatal care throughout the pregnancy."
+      question: "Will donating eggs affect my future fertility?",
+      answer: "There's no evidence that properly conducted egg donation affects future fertility. Your body naturally recruits multiple eggs each cycle anyway."
     }
   ];
 
-  const surrogateBenefits = [
+  const donorBenefits = [
     {
-      title: "Generous Compensation",
-      description: "Earn $35,000-$50,000+ while helping create a family",
+      title: "Comprehensive Screening",
+      description: "Free medical and genetic testing worth thousands of dollars",
+      icon: "🩺"
+    },
+    {
+      title: "Financial Compensation",
+      description: "Earn $5,000-$10,000 per donation cycle",
       icon: "💰"
     },
     {
-      title: "Medical Coverage",
-      description: "All medical expenses fully covered by intended parents",
-      icon: "🏥"
+      title: "Flexible Scheduling",
+      description: "Work around your school or work schedule",
+      icon: "📅"
     },
     {
-      title: "Legal Protection",
-      description: "Comprehensive legal contracts before any medical procedures",
-      icon: "⚖️"
-    },
-    {
-      title: "Emotional Support",
-      description: "Dedicated support team throughout your journey",
-      icon: "💖"
+      title: "Privacy Protection",
+      description: "Your identity remains confidential if desired",
+      icon: "🔒"
     }
   ];
 
@@ -67,40 +67,40 @@ const Surrogates: React.FC = () => {
     {
       step: 1,
       title: "Application",
-      description: "Complete our detailed application and initial screening"
+      description: "Complete our online profile and medical history"
     },
     {
       step: 2,
-      title: "Matching",
-      description: "We'll introduce you to compatible intended parents"
+      title: "Screening",
+      description: "Medical exams, genetic testing, and psychological evaluation"
     },
     {
       step: 3,
-      title: "Medical Screening",
-      description: "Complete fertility and health evaluations"
+      title: "Matching",
+      description: "We'll match you with intended parents based on preferences"
     },
     {
       step: 4,
-      title: "Legal Contracts",
-      description: "Independent attorneys draft and review all agreements"
+      title: "Medication",
+      description: "10-12 days of fertility injections to stimulate egg production"
     },
     {
       step: 5,
-      title: "Embryo Transfer",
-      description: "Simple outpatient procedure at a fertility clinic"
+      title: "Retrieval",
+      description: "30-minute outpatient procedure under light sedation"
     },
     {
       step: 6,
-      title: "Pregnancy & Delivery",
-      description: "Regular prenatal care with full support from our team"
+      title: "Recovery",
+      description: "1-2 days of rest with follow-up care"
     }
   ];
 
-  const handleFaqToggle = (id: number) => {
+  const handleFaqToggle = (id) => {
     setActiveFaq(activeFaq === id ? null : id);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -108,11 +108,11 @@ const Surrogates: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
     console.log('Form submitted:', formData);
-    alert('Thank you for your interest in becoming a surrogate! Our team will contact you shortly.');
+    alert('Thank you for your inquiry! Our team will contact you shortly.');
     setFormData({
       name: '',
       email: '',
@@ -122,9 +122,9 @@ const Surrogates: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen mt-24 bg-gray-50">
+    <div className="min-h-screen mt-24  bg-gray-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-100 to-teal-100">
+      <section className="relative py-20 bg-gradient-to-r from-pink-100 to-purple-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -133,12 +133,12 @@ const Surrogates: React.FC = () => {
             className="text-center space-y-6"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Become a Surrogate
+              Egg Donor Program
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Experience the profound joy of helping others create their family while receiving exceptional support and generous compensation.
+              Give the extraordinary gift of life while being generously compensated for your time and commitment.
             </p>
-          </motion.div>
+           </motion.div>
         </div>
       </section>
 
@@ -146,14 +146,14 @@ const Surrogates: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Why Become a Surrogate?</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Why Become an Egg Donor?</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Our surrogates receive comprehensive care and support throughout their journey
+              Our donors receive exceptional care and support throughout the entire process
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {surrogateBenefits.map((benefit, index) => (
+            {donorBenefits.map((benefit, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -176,14 +176,14 @@ const Surrogates: React.FC = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">The Surrogacy Journey</h2>
+            <h2 className="text-3xl font-bold text-gray-900">The Egg Donation Process</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Step-by-step process from application to delivery
+              Simple steps from application to completion
             </p>
           </div>
 
           <div className="relative">
-            <div className="hidden lg:block absolute top-0 left-1/2 h-full w-0.5 bg-blue-200 transform -translate-x-1/2"></div>
+            <div className="hidden lg:block absolute top-0 left-1/2 h-full w-0.5 bg-pink-200 transform -translate-x-1/2"></div>
             
             <div className="space-y-12 lg:space-y-0">
               {processSteps.map((step, index) => (
@@ -198,7 +198,7 @@ const Surrogates: React.FC = () => {
                   <div className={`lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'}`}>
                     <div className="bg-white p-6 rounded-lg shadow-md">
                       <div className="flex items-center mb-4">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 font-bold text-xl mr-4">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-pink-100 text-pink-600 font-bold text-xl mr-4">
                           {step.step}
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900">{step.title}</h3>
@@ -208,7 +208,7 @@ const Surrogates: React.FC = () => {
                   </div>
                   
                   <div className="hidden lg:block lg:w-2/12 flex-shrink-0 text-center">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold shadow-lg">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-pink-600 text-white flex items-center justify-center text-xl font-bold shadow-lg">
                       {step.step}
                     </div>
                   </div>
@@ -229,12 +229,12 @@ const Surrogates: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
             <p className="mt-4 text-lg text-gray-600">
-              Everything you need to know about becoming a surrogate
+              Everything you need to know about egg donation
             </p>
           </div>
 
           <div className="space-y-4">
-            {surrogateFaqs.map((faq) => (
+            {eggDonorFaqs.map((faq) => (
               <motion.div
                 key={faq.id}
                 initial={{ opacity: 0, y: 10 }}
@@ -249,9 +249,9 @@ const Surrogates: React.FC = () => {
                 >
                   <h3 className="text-lg font-medium text-gray-900">{faq.question}</h3>
                   {activeFaq === faq.id ? (
-                    <ChevronUp className="h-5 w-5 text-blue-600" />
+                    <ChevronUp className="h-5 w-5 text-pink-600" />
                   ) : (
-                    <ChevronDown className="h-5 w-5 text-blue-600" />
+                    <ChevronDown className="h-5 w-5 text-pink-600" />
                   )}
                 </button>
                 
@@ -275,7 +275,7 @@ const Surrogates: React.FC = () => {
       </section>
 
       {/* Contact Expert Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-teal-50">
+      <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12">
             <motion.div
@@ -285,37 +285,37 @@ const Surrogates: React.FC = () => {
               viewport={{ once: true }}
               className="mb-12 lg:mb-0"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Interested in Becoming a Surrogate?</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Have Questions About Egg Donation?</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Our surrogacy specialists are available to answer all your questions confidentially and without obligation.
+                Our egg donor specialists are here to answer all your questions confidentially and without obligation.
               </p>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-3 mr-4">
-                    <Phone className="h-6 w-6 text-blue-600" />
+                  <div className="flex-shrink-0 bg-pink-100 rounded-lg p-3 mr-4">
+                    <Phone className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-gray-900">Call Us</h3>
-                    <p className="text-gray-600">(800) 555-7891</p>
+                    <p className="text-gray-600">(800) 555-7890</p>
                     <p className="text-sm text-gray-500">Mon-Fri, 9am-5pm EST</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-3 mr-4">
-                    <Mail className="h-6 w-6 text-blue-600" />
+                  <div className="flex-shrink-0 bg-pink-100 rounded-lg p-3 mr-4">
+                    <Mail className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-gray-900">Email Us</h3>
-                    <p className="text-gray-600">surrogates@fertilityclinic.com</p>
+                    <p className="text-gray-600">donors@fertilityclinic.com</p>
                     <p className="text-sm text-gray-500">Typically respond within 24 hours</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-3 mr-4">
-                    <MessageCircle className="h-6 w-6 text-blue-600" />
+                  <div className="flex-shrink-0 bg-pink-100 rounded-lg p-3 mr-4">
+                    <MessageCircle className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-gray-900">Live Chat</h3>
@@ -333,7 +333,7 @@ const Surrogates: React.FC = () => {
               viewport={{ once: true }}
               className="bg-white rounded-xl shadow-lg p-8"
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Our Surrogacy Specialist</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Our Egg Donor Expert</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -346,7 +346,7 @@ const Surrogates: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
                   />
                 </div>
                 
@@ -361,7 +361,7 @@ const Surrogates: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
                   />
                 </div>
                 
@@ -375,7 +375,7 @@ const Surrogates: React.FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
                   />
                 </div>
                 
@@ -390,7 +390,7 @@ const Surrogates: React.FC = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
                   ></textarea>
                 </div>
                 
@@ -399,7 +399,7 @@ const Surrogates: React.FC = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md"
+                    className="w-full bg-pink-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-pink-700 transition-colors shadow-md"
                   >
                     Send Message
                   </motion.button>
@@ -411,7 +411,7 @@ const Surrogates: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-pink-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -420,14 +420,14 @@ const Surrogates: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-3xl font-bold">Ready to Begin Your Surrogacy Journey?</h2>
+            <h2 className="text-3xl font-bold">Ready to Begin Your Egg Donation Journey?</h2>
             <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              Join compassionate women who are helping dreams of parenthood come true
+              Join hundreds of women who have helped create families through egg donation
             </p>
             <div className="pt-6">
               <Link
                 to="/signup"
-                className="inline-flex items-center px-8 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-3 bg-white text-pink-600 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
               >
                 Apply Now
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -440,4 +440,4 @@ const Surrogates: React.FC = () => {
   );
 };
 
-export default Surrogates;
+export default EggDonors;

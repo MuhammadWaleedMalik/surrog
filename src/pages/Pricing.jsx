@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Check, Star, Heart, Shield } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const Pricing: React.FC = () => {
+const Pricing = () => {
   const navigate = useNavigate();
   const location = useLocation();
 

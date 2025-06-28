@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Search, Filter, ArrowRight } from 'lucide-react';
-import { WEBSITE } from '@/utils/websiteInfo';
+import { WEBSITE } from '../utils/websiteInfo';
 
-const Explore: React.FC = () => {
+const Explore = () => {
   const [searchTerm, setSearchTerm] = useState('');
   // const [selectedFilter, setSelectedFilter] = useState('all');
 

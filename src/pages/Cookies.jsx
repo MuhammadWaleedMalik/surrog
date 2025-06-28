@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Cookie, Settings, BarChart, Shield } from 'lucide-react';
-import { WEBSITE } from '@/utils/websiteInfo';
+import { WEBSITE } from '../utils/websiteInfo';
 
-const Cookies: React.FC = () => {
+const Cookies= () => {
   const cookieTypes = [
     {
       title: 'Essential Cookies',
